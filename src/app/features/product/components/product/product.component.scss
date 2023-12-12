@@ -8,14 +8,26 @@ $fiterBgColor: #f0f8fa;
   height: 100vh;
 }
 
-.sid-nav {
+.all {
+  position: relative;
+}
+
+.independant {
+  position: absolute;
+  color: red;
+  left: -32px;
+  top: 10px;
+}
+
+mat-drawer {
+  max-height: 100vh;
   background: $sidnavColor;
-  width: 260px;
 }
 
 .main-container {
   .main-nav {
-    padding: 16px;
+    padding: 24px;
+    padding-left: 50px;
     height: 90px;
     background: white;
 
@@ -25,12 +37,32 @@ $fiterBgColor: #f0f8fa;
   }
 
   .main-header {
-    padding: 24px;
+    padding: 32px;
+    padding-left: 50px;
+
     background: linear-gradient(to right, $skyblueColor, $greenColor);
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .main-header-left {
+      display: flex;
+    }
+
+    .sidnav-close {
+      margin-left: -40px;
+      font-size: 1.5rem;
+      color: #fff;
+
+      .btn-arrow {
+        background: linear-gradient(#0191a0, $greenColor);
+        width: 20px;
+        color: #fff;
+        // ::sha: 1px solid rgb 176, 176);(180,
+        box-shadow: #23231e;
+      }
+    }
 
     .date {
       margin-top: 10px;
@@ -50,6 +82,7 @@ $fiterBgColor: #f0f8fa;
 
       .main-content-filter {
         padding: 16px;
+        padding-left: 50px;
         background: $fiterBgColor;
         width: 300px;
         border: none;

@@ -31,15 +31,18 @@ const productFeature = createFeature({
   name: 'product',
   reducer: createReducer(
     initialState,
+
     on(productActions.getProductsRequest, (state) => ({
       ...state,
       isLoading: true,
     })),
+
     on(productActions.getProductsSuccess, (state, action) => ({
       ...state,
       isLoading: false,
       products: action.products,
     })),
+
     on(productActions.getProductsFailure, (state, action) => ({
       ...state,
       error: action.error,

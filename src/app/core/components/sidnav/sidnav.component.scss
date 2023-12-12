@@ -1,0 +1,16 @@
+$sidnavColor: #23231e;
+
+.sid-nav {
+  background: $sidnavColor;
+  width: 300px;
+  font-size: 2rem;
+  color: #fff;
+
+  .log-img-container {
+    margin-top: 32px;
+
+    img {
+      width: 290px;
+    }
+  }
+}

@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product/product.service';
 import { productActions } from '../../store/product.actions';
 import { ProductItmComponent } from '../product-itm/product-itm.component';
+import { SidnavComponent } from '../../../../core/components/sidnav/sidnav.component';
 
 export interface Task {
   name: string;
@@ -42,12 +43,13 @@ export interface Task {
     MatIconModule,
     FormsModule,
     ProductItmComponent,
+    SidnavComponent,
   ],
 })
 export class ProductComponent {
   products$ = this.store.select(selectProducts);
 
-  opened = true;
+  sidnavOpened = true;
 
   slectedLength: number = 3;
 
@@ -55,10 +57,6 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.store.dispatch(productActions.getProductsRequest());
-
-    this.products$.subscribe((res) =>
-      console.log('produits++++: ' + JSON.stringify(res))
-    );
   }
 
   // add
@@ -97,5 +95,9 @@ export class ProductComponent {
       return;
     }
     this.task.subtasks.forEach((t) => (t.completed = completed));
+  }
+
+  openSidnav() {
+    this.sidnavOpened = !this.sidnavOpened;
   }
 }

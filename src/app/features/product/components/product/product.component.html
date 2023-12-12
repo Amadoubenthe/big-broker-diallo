@@ -1,6 +1,8 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer class="sid-nav" mode="side" [opened]="opened"
-    >Drawer content</mat-drawer
+  <mat-drawer mode="side" [opened]="sidnavOpened">
+    <app-sidnav></app-sidnav>
+
+    ></mat-drawer
   >
   <mat-drawer-content class="main-container">
     <div class="main-nav">
@@ -9,16 +11,27 @@
     </div>
 
     <div class="main-header">
-      <div class="main-header-infos">
-        <h1>NOM DU CLIENT / PROJET</h1>
-        <p class="date">15/11/2023</p>
+      <div class="main-header-left all">
+        <div class="btn-close-container sidnav-close independant">
+          <button mat-button class="btn-arrow" (click)="openSidnav()">
+            <mat-icon>arrow_back_ios </mat-icon>
+          </button>
+        </div>
+
+        <div class="main-header-infos">
+          <h1>NOM DU CLIENT / PROJET</h1>
+          <p class="date">15/11/2023</p>
+        </div>
       </div>
+
       <div class="main-header-action">
         <button mat-raised-button>
-          Comparer <mat-icon>visibility</mat-icon>
+          <div>Comparer</div>
+          <mat-icon>visibility</mat-icon>
         </button>
       </div>
     </div>
+
     <div class="main-content">
       <mat-drawer-container>
         <mat-drawer class="main-content-filter" mode="side" [opened]="true">
