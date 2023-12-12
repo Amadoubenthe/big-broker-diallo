@@ -1,4 +1,138 @@
 {
+  "broker": [
+    {
+      "title": "Big Broker 1",
+      "subtitle": "Protection entreprise 1",
+      "level": "Niveau 1",
+      "cours": [
+        {
+          "title": "Hospitalisation",
+          "percentage": 20
+        },
+        {
+          "title": "Soins courants",
+          "percentage": 100
+        },
+        {
+          "title": "Optique",
+          "percentage": 80
+        },
+        {
+          "title": "Dentaire",
+          "percentage": 120
+        },
+        {
+          "title": "Bien-être",
+          "percentage": 100
+        },
+        {
+          "title": "Appareil auditif",
+          "percentage": 90
+        }
+      ],
+      "price_month": 12,
+      "price_year": 50
+    },
+    {
+      "title": "Big Broker",
+      "subtitle": "Protection entreprise",
+      "level": "Niveau 1",
+      "cours": [
+        {
+          "title": "Hospitalisation",
+          "percentage": 120
+        },
+        {
+          "title": "Soins courants",
+          "percentage": 120
+        },
+        {
+          "title": "Optique",
+          "percentage": 120
+        },
+        {
+          "title": "Dentaire",
+          "percentage": 120
+        },
+        {
+          "title": "Bien-être",
+          "percentage": 100
+        },
+        {
+          "title": "Appareil auditif",
+          "percentage": 90
+        }
+      ],
+      "price_month": 12,
+      "price_year": 50
+    },
+    {
+      "title": "Big Broker",
+      "subtitle": "Protection entreprise",
+      "level": "Niveau 1",
+      "cours": [
+        {
+          "title": "Hospitalisation",
+          "percentage": 120
+        },
+        {
+          "title": "Soins courants",
+          "percentage": 120
+        },
+        {
+          "title": "Optique",
+          "percentage": 120
+        },
+        {
+          "title": "Dentaire",
+          "percentage": 120
+        },
+        {
+          "title": "Bien-être",
+          "percentage": 100
+        },
+        {
+          "title": "Appareil auditif",
+          "percentage": 90
+        }
+      ],
+      "price_month": 12,
+      "price_year": 50
+    },
+    {
+      "title": "Big Broker",
+      "subtitle": "Protection entreprise",
+      "level": "Niveau 1",
+      "cours": [
+        {
+          "title": "Hospitalisation",
+          "percentage": 120
+        },
+        {
+          "title": "Soins courants",
+          "percentage": 120
+        },
+        {
+          "title": "Optique",
+          "percentage": 50
+        },
+        {
+          "title": "Dentaire",
+          "percentage": 20
+        },
+        {
+          "title": "Bien-être",
+          "percentage": 0
+        },
+        {
+          "title": "Appareil auditif",
+          "percentage": 90
+        }
+      ],
+      "price_month": 12,
+      "price_year": 50
+    }
+  ],
   "products": [
     {
       "id": 1,

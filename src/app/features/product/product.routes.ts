@@ -5,5 +5,6 @@ export const productsRoutes: Routes = [
   {
     path: '',
     component: ProductComponent,
+    pathMatch: 'full',
   },
 ];

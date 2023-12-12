@@ -1,0 +1,60 @@
+<mat-card>
+  <mat-card-header>
+    <div class="logo">
+      <img src="../../../../../assets/img/cardlogo.png" alt="logo" />
+    </div>
+    <div class="title">
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.subtitle }}</p>
+      <p>{{ product.level }}</p>
+    </div>
+    <div class="percentage">
+      <p>
+        Concorde<br />
+        à 90 %
+      </p>
+    </div>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    @for (cour of product.cours; track cour) {
+    <div class="soin">
+      <span
+        ><mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="home"
+        ></mat-icon
+      ></span>
+      <span class="span-name">{{ cour.title }}</span>
+      <span>
+        <mat-slider min="1" max="5" step="2" value="5">
+          <input matSliderThumb />
+        </mat-slider>
+      </span>
+      <span>{{ cour.percentage }} %</span>
+    </div>
+    }
+  </mat-card-content>
+  <div class="price">
+    <p><span>23 $</span>/mois</p>
+  </div>
+  <mat-card-actions>
+    <div>
+      <button mat-raised-button class="btn-add">
+        <mat-icon>add</mat-icon>
+        Options
+      </button>
+    </div>
+    <div>
+      <button mat-raised-button class="btn-show">
+        <mat-icon>visibility</mat-icon>
+        Détails
+      </button>
+    </div>
+  </mat-card-actions>
+  <mat-divider></mat-divider>
+  <div class="btn-check-container">
+    <mat-checkbox class="example-margin">Sélectionner</mat-checkbox>
+  </div>
+</mat-card>

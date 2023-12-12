@@ -10,6 +10,7 @@ import {
 import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import * as ProductEffects from './features/product/store/product.effects';
+
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
@@ -20,6 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideState(productFeatureKey, productReducer),
     provideEffects(ProductEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideAnimations()
-],
+    provideAnimations(),
+  ],
 };

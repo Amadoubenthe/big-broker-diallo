@@ -1,3 +1,87 @@
-<p>products works!</p>
+<mat-drawer-container class="example-container">
+  <mat-drawer class="sid-nav" mode="side" [opened]="opened"
+    >Drawer content</mat-drawer
+  >
+  <mat-drawer-content class="main-container">
+    <div class="main-nav">
+      <div>Product > Création</div>
+      <button mat-button>Retour</button>
+    </div>
 
-{{ products$ | async }}
+    <div class="main-header">
+      <div class="main-header-infos">
+        <h1>NOM DU CLIENT / PROJET</h1>
+        <p class="date">15/11/2023</p>
+      </div>
+      <div class="main-header-action">
+        <button mat-raised-button>
+          Comparer <mat-icon>visibility</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="main-content">
+      <mat-drawer-container>
+        <mat-drawer class="main-content-filter" mode="side" [opened]="true">
+          <div>
+            <div class="btn-close-container">
+              <button mat-button>X</button>
+            </div>
+            <div>
+              <button mat-raised-button class="btn-reset">
+                <mat-icon>visibility</mat-icon>Réinitialiser
+              </button>
+            </div>
+            <div class="bidet-container">
+              <p>Ajuster le budget</p>
+              <div>
+                <mat-slider min="200" max="500">
+                  <input value="300" matSliderStartThumb />
+                  <input value="400" matSliderEndThumb />
+                </mat-slider>
+              </div>
+              <div>
+                <section class="example-section">
+                  <p>Assureur</p>
+                  <span class="example-list-section">
+                    <ul>
+                      @for (subtask of task.subtasks; track subtask) {
+                      <li>
+                        <mat-checkbox
+                          [(ngModel)]="subtask.completed"
+                          [color]="subtask.color"
+                          (ngModelChange)="updateAllComplete()"
+                        >
+                          {{ subtask.name }}
+                        </mat-checkbox>
+                      </li>
+                      }
+                    </ul>
+                  </span>
+                </section>
+              </div>
+            </div>
+          </div>
+        </mat-drawer>
+        <mat-drawer-content class="main-content-list"
+          ><div class="main-content-list-actions">
+            <p class="offer-len-text">4 offres trouvées</p>
+
+            <div class="main-content-list-actions">
+              <div>
+                <button mat-raised-button class="btn-filter">Filtres</button>
+              </div>
+              <div class="btn-slid-container">
+                <mat-slide-toggle>Mensuel</mat-slide-toggle>
+              </div>
+            </div>
+          </div>
+          <div class="main-content-list-card">
+            @for (product of products$ |async; track product) {
+            <app-product-itm [product]="product"></app-product-itm>
+            }
+          </div>
+        </mat-drawer-content>
+      </mat-drawer-container>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

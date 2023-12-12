@@ -2,33 +2,18 @@ import { createFeature, createReducer, on } from '@ngrx/store';
 import { productActions } from './product.actions';
 
 export interface Product {
-  id: number;
-  name: string;
-  price: number;
+  title: string;
+  subtitle: string;
+  level: number;
+  cours: Cour[];
+  price_month: number;
+  price_year: number;
 }
 
-const p = [
-  {
-    id: 1,
-    name: 'product 1',
-    price: 2,
-  },
-  {
-    id: 1,
-    name: 'product 1',
-    price: 2,
-  },
-  {
-    id: 2,
-    name: 'product 2',
-    price: 2,
-  },
-  {
-    id: 3,
-    name: 'product 3',
-    price: 2,
-  },
-];
+export interface Cour {
+  title: string;
+  percentage: string;
+}
 
 export interface ProductState {
   products: Product[] | null | undefined;
