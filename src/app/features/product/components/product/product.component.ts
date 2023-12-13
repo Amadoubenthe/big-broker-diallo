@@ -16,12 +16,12 @@ import {
   selectProductSelected,
   selectProducts,
 } from '../../store/product.reducer';
-import { ProductState } from '../../store/product.reducer';
 import { CommonModule } from '@angular/common';
 import { productActions } from '../../store/product.actions';
 import { ProductItmComponent } from '../product-itm/product-itm.component';
 import { SidnavComponent } from '../../../../core/components/sidnav/sidnav.component';
 import { ProductFilterComponent } from '../product-filter/product-filter.component';
+import { ProductState } from '../../../../shared/types/product-state';
 
 @Component({
   selector: 'app-product',

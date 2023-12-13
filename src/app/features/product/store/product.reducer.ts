@@ -1,28 +1,6 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { productActions } from './product.actions';
-
-export interface Product {
-  id: number;
-  title: string;
-  subtitle: string;
-  level: number;
-  cours: Cour[];
-  price_month: number;
-  price_year: number;
-}
-
-export interface Cour {
-  title: string;
-  percentage: string;
-  icon: string;
-}
-
-export interface ProductState {
-  products: Product[] | null | undefined;
-  productSelected: Product[];
-  isLoading: boolean;
-  error: string;
-}
+import { ProductState } from '../../../shared/types/product-state';
 
 const initialState: ProductState = {
   products: [],

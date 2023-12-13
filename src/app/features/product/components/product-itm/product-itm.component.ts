@@ -7,10 +7,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
-import { Product, ProductState } from '../../store/product.reducer';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { productActions } from '../../store/product.actions';
+import { Product } from '../../../../shared/types/product';
+import { ProductState } from '../../../../shared/types/product-state';
 
 @Component({
   selector: 'app-product-itm',
