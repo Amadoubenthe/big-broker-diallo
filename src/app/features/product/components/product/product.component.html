@@ -34,8 +34,14 @@
 
     <div class="main-content">
       <mat-drawer-container>
-        <mat-drawer class="main-content-filter" mode="side" [opened]="true">
-          <app-product-filter></app-product-filter>
+        <mat-drawer
+          class="main-content-filter"
+          mode="side"
+          [opened]="filterIsOpened"
+        >
+          <app-product-filter
+            [(filterIsOpened)]="filterIsOpened"
+          ></app-product-filter>
         </mat-drawer>
         <mat-drawer-content class="main-content-list"
           ><div class="main-content-list-actions">
@@ -43,7 +49,14 @@
 
             <div class="main-content-list-actions">
               <div>
-                <button mat-raised-button class="btn-filter">Filtres</button>
+                <button
+                  mat-raised-button
+                  class="btn-filter"
+                  (click)="openFilter()"
+                >
+                  <mat-icon>tune</mat-icon>
+                  Filtres
+                </button>
               </div>
               <div class="btn-slid-container">
                 <mat-slide-toggle>Mensuel</mat-slide-toggle>

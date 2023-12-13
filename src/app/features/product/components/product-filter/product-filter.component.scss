@@ -1,9 +1,8 @@
 .btn-close-container {
-  padding-left: 70%;
+  padding-left: 66%;
   margin: 16px;
 
   button {
-    padding: 8px;
     color: gainsboro;
   }
 }
@@ -22,6 +21,10 @@
     font-size: 1.5rem;
     font-weight: 500;
   }
+}
+
+.assureur-list {
+  padding-top: 24px;
 }
 
 mat-slider {

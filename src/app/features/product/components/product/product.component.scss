@@ -59,7 +59,6 @@ mat-drawer {
         background: linear-gradient(#0191a0, $greenColor);
         width: 20px;
         color: #fff;
-        // ::sha: 1px solid rgb 176, 176);(180,
         box-shadow: #23231e;
       }
     }
@@ -81,41 +80,10 @@ mat-drawer {
       height: 100%;
 
       .main-content-filter {
-        padding: 16px;
-        padding-left: 50px;
         background: $fiterBgColor;
-        width: 300px;
+        width: 270px;
+        padding: 16px;
         border: none;
-
-        // .btn-close-container {
-        //   padding-left: 70%;
-        //   margin: 16px;
-
-        //   button {
-        //     padding: 8px;
-        //     color: gainsboro;
-        //   }
-        // }
-
-        // .btn-reset {
-        //   color: white;
-        //   background-color: #0197a6;
-        //   padding: 26px;
-        //   border-radius: 26px;
-        // }
-
-        // .bidet-container {
-        //   margin-top: 16px;
-
-        //   p {
-        //     font-size: 1.5rem;
-        //     font-weight: 500;
-        //   }
-        // }
-
-        // mat-slider {
-        //   width: 90%;
-        // }
       }
 
       // List

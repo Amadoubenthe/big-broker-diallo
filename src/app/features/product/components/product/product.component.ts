@@ -45,6 +45,7 @@ export class ProductComponent {
   products$ = this.store.select(selectProducts);
 
   sidnavOpened = true;
+  filterIsOpened = true;
 
   slectedLength: number = 3;
 
@@ -52,6 +53,10 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.store.dispatch(productActions.getProductsRequest());
+  }
+
+  openFilter() {
+    this.filterIsOpened = !this.filterIsOpened;
   }
 
   openSidnav() {

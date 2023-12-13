@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -7,6 +7,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ThemePalette } from '@angular/material/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 
 export interface Task {
   name: string;
@@ -23,9 +24,8 @@ export interface Task {
     MatIconModule,
     MatSliderModule,
     MatButtonModule,
-
+    MatDividerModule,
     MatSidenavModule,
-
     MatCheckboxModule,
   ],
   templateUrl: './product-filter.component.html',
@@ -33,6 +33,10 @@ export interface Task {
 })
 export class ProductFilterComponent {
   allComplete: boolean = false;
+
+  @Input() filterIsOpened!: boolean;
+
+  @Output() filterIsOpenedChange = new EventEmitter<boolean>();
 
   // add
   task: Task = {
@@ -45,6 +49,13 @@ export class ProductFilterComponent {
       { name: 'Warn', completed: false, color: 'warn' },
     ],
   };
+
+  constructor() {}
+
+  onChange() {
+    const changed = !this.filterIsOpened;
+    this.filterIsOpenedChange.emit(changed);
+  }
 
   updateAllComplete() {
     this.allComplete =
