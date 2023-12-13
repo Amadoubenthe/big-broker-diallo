@@ -2,6 +2,7 @@ import { createFeature, createReducer, on } from '@ngrx/store';
 import { productActions } from './product.actions';
 
 export interface Product {
+  id: number;
   title: string;
   subtitle: string;
   level: number;
@@ -18,12 +19,14 @@ export interface Cour {
 
 export interface ProductState {
   products: Product[] | null | undefined;
+  productSelected: Product[];
   isLoading: boolean;
   error: string;
 }
 
 const initialState: ProductState = {
   products: [],
+  productSelected: [],
   isLoading: false,
   error: '',
 };
@@ -32,7 +35,6 @@ const productFeature = createFeature({
   name: 'product',
   reducer: createReducer(
     initialState,
-
     on(productActions.getProductsRequest, (state) => ({
       ...state,
       isLoading: true,
@@ -48,6 +50,20 @@ const productFeature = createFeature({
       ...state,
       error: action.error,
       isLoading: false,
+    })),
+
+    // Select
+    on(productActions.selectProductRequest, (state, action) => ({
+      ...state,
+      productSelected: [...state.productSelected, action.product],
+    })),
+
+    // Deselect product
+    on(productActions.deselectProductRequest, (state, action) => ({
+      ...state,
+      productSelected: [
+        ...state.productSelected.filter((p) => p.id !== action.product.id),
+      ],
     }))
   ),
 });
@@ -57,5 +73,6 @@ export const {
   reducer: productReducer,
   selectProducts,
   selectIsLoading,
+  selectProductSelected,
   selectError,
 } = productFeature;

@@ -9,12 +9,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { FormsModule } from '@angular/forms';
 
-import { selectProducts } from '../../store/product.reducer';
+import {
+  selectProductSelected,
+  selectProducts,
+} from '../../store/product.reducer';
 import { ProductState } from '../../store/product.reducer';
 import { CommonModule } from '@angular/common';
-import { ProductService } from '../../services/product/product.service';
 import { productActions } from '../../store/product.actions';
 import { ProductItmComponent } from '../product-itm/product-itm.component';
 import { SidnavComponent } from '../../../../core/components/sidnav/sidnav.component';
@@ -35,6 +38,7 @@ import { ProductFilterComponent } from '../product-filter/product-filter.compone
     MatCardModule,
     MatDividerModule,
     MatIconModule,
+    MatBadgeModule,
     FormsModule,
     ProductItmComponent,
     SidnavComponent,
@@ -43,11 +47,14 @@ import { ProductFilterComponent } from '../product-filter/product-filter.compone
 })
 export class ProductComponent {
   products$ = this.store.select(selectProducts);
+  productSelected$ = this.store.select(selectProductSelected);
 
   sidnavOpened = true;
   filterIsOpened = true;
 
-  slectedLength: number = 3;
+  selectedCount: number = 5;
+
+  isMonthPrice = true;
 
   constructor(private store: Store<{ product: ProductState }>) {}
 

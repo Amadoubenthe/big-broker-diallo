@@ -8,13 +8,18 @@ $fiterBgColor: #f0f8fa;
   height: 100vh;
 }
 
+.btn-flex-div-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .all {
   position: relative;
 }
 
 .independant {
   position: absolute;
-  color: red;
   left: -32px;
   top: 10px;
 }
@@ -110,7 +115,10 @@ mat-drawer {
           }
 
           .btn-slid-container {
-            margin-left: 8px;
+            margin-left: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
           }
         }
 

@@ -34,7 +34,9 @@
   </mat-card-content>
   <div class="price">
     <p>
-      <span>{{ product.price_month }} $</span>/mois
+      @if (isMonthPrice) {
+      <span>{{ product.price_month }} $</span>/mois } @else {
+      <span>{{ product.price_year }} $</span>/year }
     </p>
   </div>
   <mat-card-actions>
@@ -53,6 +55,13 @@
   </mat-card-actions>
   <mat-divider></mat-divider>
   <div class="btn-check-container">
-    <mat-checkbox class="example-margin">Sélectionner</mat-checkbox>
+    <mat-checkbox
+      class="example-margin"
+      [(ngModel)]="checked"
+      (ngModelChange)="onChange($event, product)"
+      >Checked</mat-checkbox
+    >
+    <!-- <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+    <mat-checkbox class="example-margin">Sélectionner</mat-checkbox> -->
   </div>
 </mat-card>

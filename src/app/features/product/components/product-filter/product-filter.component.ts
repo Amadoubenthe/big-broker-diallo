@@ -44,9 +44,11 @@ export class ProductFilterComponent {
     completed: false,
     color: 'primary',
     subtasks: [
-      { name: 'Primary', completed: false, color: 'primary' },
-      { name: 'Accent', completed: false, color: 'accent' },
-      { name: 'Warn', completed: false, color: 'warn' },
+      { name: 'Alptis', completed: false, color: 'primary' },
+      { name: 'April', completed: false, color: 'accent' },
+      { name: 'Axa', completed: false, color: 'warn' },
+      { name: 'CNP Assurances', completed: false, color: 'primary' },
+      { name: 'SPVE Assurances', completed: false, color: 'primary' },
     ],
   };
 
