@@ -35,45 +35,7 @@
     <div class="main-content">
       <mat-drawer-container>
         <mat-drawer class="main-content-filter" mode="side" [opened]="true">
-          <div>
-            <div class="btn-close-container">
-              <button mat-button>X</button>
-            </div>
-            <div>
-              <button mat-raised-button class="btn-reset">
-                <mat-icon>visibility</mat-icon>Réinitialiser
-              </button>
-            </div>
-            <div class="bidet-container">
-              <p>Ajuster le budget</p>
-              <div>
-                <mat-slider min="200" max="500">
-                  <input value="300" matSliderStartThumb />
-                  <input value="400" matSliderEndThumb />
-                </mat-slider>
-              </div>
-              <div>
-                <section class="example-section">
-                  <p>Assureur</p>
-                  <span class="example-list-section">
-                    <ul>
-                      @for (subtask of task.subtasks; track subtask) {
-                      <li>
-                        <mat-checkbox
-                          [(ngModel)]="subtask.completed"
-                          [color]="subtask.color"
-                          (ngModelChange)="updateAllComplete()"
-                        >
-                          {{ subtask.name }}
-                        </mat-checkbox>
-                      </li>
-                      }
-                    </ul>
-                  </span>
-                </section>
-              </div>
-            </div>
-          </div>
+          <app-product-filter></app-product-filter>
         </mat-drawer>
         <mat-drawer-content class="main-content-list"
           ><div class="main-content-list-actions">

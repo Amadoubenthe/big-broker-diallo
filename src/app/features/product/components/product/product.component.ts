@@ -4,7 +4,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ThemePalette } from '@angular/material/core';
+
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -18,13 +18,7 @@ import { ProductService } from '../../services/product/product.service';
 import { productActions } from '../../store/product.actions';
 import { ProductItmComponent } from '../product-itm/product-itm.component';
 import { SidnavComponent } from '../../../../core/components/sidnav/sidnav.component';
-
-export interface Task {
-  name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
-}
+import { ProductFilterComponent } from '../product-filter/product-filter.component';
 
 @Component({
   selector: 'app-product',
@@ -44,6 +38,7 @@ export interface Task {
     FormsModule,
     ProductItmComponent,
     SidnavComponent,
+    ProductFilterComponent,
   ],
 })
 export class ProductComponent {
@@ -57,44 +52,6 @@ export class ProductComponent {
 
   ngOnInit(): void {
     this.store.dispatch(productActions.getProductsRequest());
-  }
-
-  // add
-  task: Task = {
-    name: 'Indeterminate',
-    completed: false,
-    color: 'primary',
-    subtasks: [
-      { name: 'Primary', completed: false, color: 'primary' },
-      { name: 'Accent', completed: false, color: 'accent' },
-      { name: 'Warn', completed: false, color: 'warn' },
-    ],
-  };
-
-  allComplete: boolean = false;
-
-  updateAllComplete() {
-    this.allComplete =
-      this.task.subtasks != null &&
-      this.task.subtasks.every((t) => t.completed);
-  }
-
-  someComplete(): boolean {
-    if (this.task.subtasks == null) {
-      return false;
-    }
-    return (
-      this.task.subtasks.filter((t) => t.completed).length > 0 &&
-      !this.allComplete
-    );
-  }
-
-  setAll(completed: boolean) {
-    this.allComplete = completed;
-    if (this.task.subtasks == null) {
-      return;
-    }
-    this.task.subtasks.forEach((t) => (t.completed = completed));
   }
 
   openSidnav() {
