@@ -45,7 +45,11 @@
         </mat-drawer>
         <mat-drawer-content class="main-content-list"
           ><div class="main-content-list-actions">
-            <p class="offer-len-text">4 offres trouvées</p>
+            <p class="offer-len-text">
+              @if (products$ | async; as products ) {
+              <span>{{ products.length }}</span>
+              } offres trouvées
+            </p>
 
             <div class="main-content-list-actions">
               <div>

@@ -13,6 +13,7 @@ export interface Product {
 export interface Cour {
   title: string;
   percentage: string;
+  icon: string;
 }
 
 export interface ProductState {

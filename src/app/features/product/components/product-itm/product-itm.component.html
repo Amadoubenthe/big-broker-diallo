@@ -20,12 +20,8 @@
     @for (cour of product.cours; track cour) {
     <div class="soin">
       <span
-        ><mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          fontIcon="home"
-        ></mat-icon
-      ></span>
+        ><mat-icon>{{ cour.icon }}</mat-icon></span
+      >
       <span class="span-name">{{ cour.title }}</span>
       <span>
         <mat-slider min="1" max="5" step="2" value="5">
@@ -37,7 +33,9 @@
     }
   </mat-card-content>
   <div class="price">
-    <p><span>23 $</span>/mois</p>
+    <p>
+      <span>{{ product.price_month }} $</span>/mois
+    </p>
   </div>
   <mat-card-actions>
     <div>
